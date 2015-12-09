@@ -5,3 +5,10 @@ my development is using a STM3210B-EVAL because I have one left over from someth
 
 http://www.mouser.co.uk/STM3210B/
 could use a MAPLE?
+
+as I can't work out submodues have to 
+
+git clone https://github.com/libopencm3/libopencm3.git
+
+into/libopencm3
+
