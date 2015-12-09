@@ -8,15 +8,16 @@ telnet localhost 4444
 
 In the telnet session issue a reset halt command.
 
-> reset halt
+reset halt
 
-> flash write_image erase cdctest.bin 0x08000000
+flash write_image erase cdctest.bin 0x08000000
 
 and restart
 
-> reset run
+reset run
 
 unplug replug and dmesg
+dmesg | grep -i usb
 some where in the usb bits 
 you should find the device 
 
