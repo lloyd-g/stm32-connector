@@ -1,7 +1,7 @@
-PROGRAM     = cdc-test
+PROGRAM     = cdctest
 CROSS       = arm-none-eabi
 SERIAL      = /dev/ttyUSB0
-OBJS        = cdc-test.o
+OBJS        = cdctest.o
 
 
 
@@ -66,7 +66,7 @@ $(DMP): $(ELF)
 $(LDPATH)$(LIBOPENCM3):
 	git submodule init
 	git submodule update --remote
-	make -C libopencm3 lib/stm32/f1
+	make -C ../libopencm3 lib/stm32/f1
 
 .PHONY: clean distclean flash size
 
@@ -77,8 +77,6 @@ distclean: clean
 	make -C libopencm3 clean
 	rm -f *~ *.swp
 
-flash: $(HEX)
-	stm32flash -w $< -v $(SERIAL)
 
 size: $(PROGRAM).elf
 	@echo ""
