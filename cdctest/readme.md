@@ -25,4 +25,6 @@ lsusb
 
 should give a quick view.
 
-
+could use stlink
+~/stlink/st-flash write cdctest.bin 0x08000000
+the program is in my home at /stlink
