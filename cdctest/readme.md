@@ -28,3 +28,9 @@ should give a quick view.
 could use stlink
 ~/stlink/st-flash write cdctest.bin 0x08000000
 the program is in my home at /stlink
+
+
+openocd all in one line:
+openocd -d0  /usr/local/share/openocd/scripts/interface/stlink-v2.cfg -f /usr/local/share/openocd/scripts/target/stm32f1x.cfg \
+ -c init -c targets -c "halt" -c "flash write_image erase cdctest.elf" \
+ -c "verify_image cdctest.elf" -c "reset run" -c shutdown
