@@ -23,7 +23,7 @@ MAP         = $(PROGRAM).map
 DMP         = $(PROGRAM).dis
 
 # STM32F103xB
-LDSCRIPT    = ../stm32f103xb.ld
+LDSCRIPT    = ../mb525.ld
 DEFS        = -DSTM32F1
 INCS        = -I../libopencm3/include/
 FP_FLAGS    = -msoft-float
