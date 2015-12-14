@@ -12,3 +12,9 @@ git clone https://github.com/libopencm3/libopencm3.git
 
 into/libopencm3
 
+Did think of bare metal serial like 
+
+http://gpio.kaltpost.de/?page_id=167
+
+but it was limited as I could not find any good examples for SPI and I2C.
+
