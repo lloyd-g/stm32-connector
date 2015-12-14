@@ -239,14 +239,15 @@ int main(void)
 
 	rcc_periph_clock_enable(RCC_GPIOA);
 	rcc_periph_clock_enable(RCC_AFIO);
-
+	rcc_periph_clock_enable(RCC_GPIOD);
+	// turns off JTAG but turns on SWD from original why 
 	AFIO_MAPR |= AFIO_MAPR_SWJ_CFG_JTAG_OFF_SW_ON;
-
+	// disconnects usb by by making it float?
 	gpio_set_mode(GPIOD, GPIO_MODE_INPUT, 0, GPIO9);
 
 	usbd_dev = usbd_init(&stm32f103_usb_driver, &dev, &config, usb_strings, 3, usbd_control_buffer, sizeof(usbd_control_buffer));
 	usbd_register_set_config_callback(usbd_dev, cdcacm_set_config);
-
+	// turns on usb looks wrong way around?
 	gpio_set(GPIOD, GPIO9);
 	gpio_set_mode(GPIOD, GPIO_MODE_OUTPUT_2_MHZ,
 		      GPIO_CNF_OUTPUT_PUSHPULL, GPIO9);
